@@ -1,6 +1,6 @@
 "use client"; 
 
-import { Button, CloseButton, Drawer, Flex, Icon, IconButton, Portal, Switch, Text } from "@chakra-ui/react"; 
+import { Button, CloseButton, Drawer, Flex, Icon, IconButton, Input, Popover, Portal, Switch, Text } from "@chakra-ui/react"; 
 import { useTheme } from "@/context/ThemeContext";
 import { useMediaQuery } from "@chakra-ui/react";
 import React, { useState } from 'react';
@@ -9,6 +9,9 @@ import { MdCoffeeMaker } from "react-icons/md";
 import { HiHeart } from "react-icons/hi";
 import { BiSolidCoffeeAlt } from "react-icons/bi";
 import { RxHamburgerMenu } from "react-icons/rx";
+import TextP from "@/components/primaries/texts/TextP";
+import TextN from "@/components/primaries/texts/TextN";
+import IconButtonType1 from "@/components/primaries/buttons/IconButtonType1";
 
 
 
@@ -16,6 +19,7 @@ export default function DashboardPage() {
 
   const { theme, toggleTheme } = useTheme();
   const [userName, setUserName] = useState<string>('John Doe');
+  
   
 
   //USAR AQUI
@@ -158,9 +162,83 @@ export default function DashboardPage() {
               <Flex
                 h="100%"
                 bg={theme.colors.color0}
-                pr="20px"
-                justifyContent="center">
-              
+                justifyContent="center"
+                alignItems="center"
+                pr="20px">
+                  <Popover.Root>
+                    <Popover.Trigger asChild>
+                      <IconButtonType1 aria-label="Naruto Form">
+                        <Text fontSize="sm" color={theme.colors.color0}></Text>
+                      </IconButtonType1>
+                    </Popover.Trigger>
+                    <Portal >
+                      <Popover.Positioner>
+
+                        <Popover.Content borderRadius="16px" css={{ "--popover-bg": theme.colors.color4 }}>
+                          <Popover.Arrow />
+                          <Popover.Body>
+
+                            <Popover.Title 
+                              fontFamily="'Inter Variable', sans-serif" 
+                              color={theme.colors.onColor4}
+                              fontSize="20px"
+                              textAlign="center"
+                              fontWeight="600">
+                              Fazer Login
+                            </Popover.Title>
+                            
+
+
+                            <TextP color={theme.colors.onColor4} mt={6}>Nome de usuário:</TextP>
+                            <Input
+                              mt={2}
+                              size="sm"
+                              fontSize="16px"
+                              w="100%"
+                              borderRadius="10px"
+                              color={theme.colors.onColor4}
+                              bg={theme.colors.color4}
+                              borderColor={theme.colors.color1}
+                              placeholder="Digite seu nome de usuário"
+                              _placeholder={{
+                                color: theme.colors.onColor4,  
+                                opacity: 1                      
+                              }}
+                              focusVisibleRing="outside"                
+                              focusRingColor={theme.colors.color6}              
+                              focusRingWidth="2px"                      
+                              focusRingStyle="solid"                    
+                            />
+
+                          
+
+                            <TextP color={theme.colors.onColor4} mt={6} fontSize="16px">Senha:</TextP>
+                            <Input
+                              mt={2}
+                              size="sm"
+                              fontSize="16px"
+                              w="100%"
+                              borderRadius="10px"
+                              color={theme.colors.onColor4}
+                              bg={theme.colors.color4}
+                              borderColor={theme.colors.color1}
+                              placeholder="Digite sua senha"
+                              _placeholder={{
+                                color: theme.colors.onColor4,  
+                                opacity: 1                      
+                              }}
+                              focusVisibleRing="outside"                
+                              focusRingColor={theme.colors.color6}              
+                              focusRingWidth="2px"                      
+                              focusRingStyle="solid" />
+
+                              
+                            
+                          </Popover.Body>
+                        </Popover.Content>
+                      </Popover.Positioner>
+                    </Portal>
+                  </Popover.Root>
                   
               </Flex>
             </Flex>

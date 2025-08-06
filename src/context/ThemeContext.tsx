@@ -74,7 +74,7 @@ const lightTheme: Theme = {
     color4: '#D1D1D6',
     color5: '#1C1C1E',
 
-    color6: '#D5FF35',
+    color6: '#ff9100ff',
     color7: '#B5E132',
     color8: '',
     color9: '',
@@ -105,8 +105,8 @@ const darkTheme: Theme = {
     color5: '#F2F2F7',      
 
     // Cores de destaque
-    color6: '#D5FF35',       
-    color7: '#B5E132',       
+    color6: '#ff9100ff',       
+    color7: '#c06d00ff',       
     color8: '',              
     color9: '',              
     color10: '#FF453A',      
