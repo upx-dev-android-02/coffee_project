@@ -66,11 +66,12 @@ export default function DashboardPage() {
             w="100%"
             flexGrow={1}
             pr="20px"
+            pl="20px"
             pb="20px"
             alignItems="end"
-            justifyContent="right">
+            justifyContent="left">
 
-              <Switch.Root onCheckedChange={toggleTheme} colorPalette="red" size="md">
+              <Switch.Root onCheckedChange={toggleTheme} colorPalette="green" size="md">
                 <Switch.HiddenInput />
                 <Switch.Control>
                   <Switch.Thumb />
@@ -188,14 +189,13 @@ export default function DashboardPage() {
                             </Popover.Title>
                             
 
-
                             <TextP color={theme.colors.onColor4} mt={6}>Nome de usuário:</TextP>
                             <Input
                               mt={2}
                               size="sm"
                               fontSize="16px"
                               w="100%"
-                              borderRadius="10px"
+                              borderRadius="6px"
                               color={theme.colors.onColor4}
                               bg={theme.colors.color4}
                               borderColor={theme.colors.color1}
@@ -206,8 +206,8 @@ export default function DashboardPage() {
                               }}
                               focusVisibleRing="outside"                
                               focusRingColor={theme.colors.color6}              
-                              focusRingWidth="2px"                      
-                              focusRingStyle="solid"                    
+                              focusRingWidth="0px"                      
+                              focusRingStyle="none"                  
                             />
 
                           
@@ -218,7 +218,7 @@ export default function DashboardPage() {
                               size="sm"
                               fontSize="16px"
                               w="100%"
-                              borderRadius="10px"
+                              borderRadius="6px"
                               color={theme.colors.onColor4}
                               bg={theme.colors.color4}
                               borderColor={theme.colors.color1}
@@ -229,8 +229,8 @@ export default function DashboardPage() {
                               }}
                               focusVisibleRing="outside"                
                               focusRingColor={theme.colors.color6}              
-                              focusRingWidth="2px"                      
-                              focusRingStyle="solid" />
+                              focusRingWidth="0px"                      
+                              focusRingStyle="none" />
 
                               
                             

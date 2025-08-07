@@ -13,11 +13,11 @@ export default function IconButtonType1({ ...rest }) {
     return (
         <Flex
             as="button"
-            bg={theme.colors.color3} 
+            bg={theme.colors.color0} 
             color={theme.colors.onColor3}
             borderRadius="50%"
-            width="38px"
-            height="38px"
+            width="36px"
+            height="36px"
             border="1px solid" 
             borderColor="transparent" 
             outline="none"
@@ -35,7 +35,7 @@ export default function IconButtonType1({ ...rest }) {
             }}
             {...rest}
         >
-            <IoPerson size="26px" color={theme.colors.onColor3} />
+            <IoPerson size="22px" color={theme.colors.onColor3} />
         </Flex>
     );
 };
