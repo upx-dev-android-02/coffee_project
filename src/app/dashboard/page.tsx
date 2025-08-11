@@ -4,14 +4,15 @@ import { Button, CloseButton, Drawer, Flex, Icon, IconButton, Input, Popover, Po
 import { useTheme } from "@/context/ThemeContext";
 import { useMediaQuery } from "@chakra-ui/react";
 import React, { useState } from 'react';
-import { FaMoon, FaSun } from "react-icons/fa";
+import { FaCog, FaFileAlt, FaFolderOpen, FaHome, FaMoon, FaSun } from "react-icons/fa";
 import { MdCoffeeMaker } from "react-icons/md";
-import { HiHeart } from "react-icons/hi";
+import { HiCog, HiHeart } from "react-icons/hi";
 import { BiSolidCoffeeAlt } from "react-icons/bi";
 import { RxHamburgerMenu } from "react-icons/rx";
 import TextP from "@/components/primaries/texts/TextP";
 import TextN from "@/components/primaries/texts/TextN";
 import IconButtonType1 from "@/components/primaries/buttons/IconButtonType1";
+import MenuList, { MenuItemData } from "@/components/walls/dashboard/MenuList";
 
 
 
@@ -21,6 +22,35 @@ export default function DashboardPage() {
   const [userName, setUserName] = useState<string>('John Doe');
   
   
+  const menuData: MenuItemData[] = [
+    {
+      label: 'Home',
+      href: '/',
+      icon: <FaHome />,
+    },
+    {
+      label: 'Arquivos',
+      icon: <FaFileAlt />,
+      subItems: [
+        { label: 'Novo Documento', href: '/files/new' },
+        { label: 'Abrir Recentes', href: '/files/recent' },
+      ],
+    },
+    {
+      label: 'Configurações',
+      icon: <FaCog />,
+      subItems: [
+        { label: 'Perfil', href: '/settings/profile' },
+        { label: 'Aparência', href: '/settings/appearance' },
+      ]
+    },
+    {
+      label: 'Contato',
+      href: '/contact',
+      icon: <FaFolderOpen />,
+    }
+  ];
+
 
   //USAR AQUI
   //const [isMobile] = useMediaQuery(["(max-width: 768px)"]);
@@ -59,7 +89,7 @@ export default function DashboardPage() {
             w="100%"
             flexGrow={10}
             justifyContent="center"> 
-              
+              <DynamicMenuList items={menuData} />
           </Flex>
 
           <Flex
@@ -154,8 +184,8 @@ export default function DashboardPage() {
               </Flex>
             
               <Text
-                fontFamily="'Inter Variable', sans-serif"
-                fontWeight="500"
+                //fontFamily="'Inter Variable', sans-serif"
+                //fontWeight="500"
                 fontSize={"22px"}
                 color={theme.colors.onColor1}
               > Olá, {userName}! </Text>
@@ -201,7 +231,7 @@ export default function DashboardPage() {
                               borderColor={theme.colors.color1}
                               placeholder="Digite seu nome de usuário"
                               _placeholder={{
-                                color: theme.colors.onColor4,  
+                                color: theme.colors.color5,  
                                 opacity: 1                      
                               }}
                               focusVisibleRing="outside"                
@@ -224,7 +254,7 @@ export default function DashboardPage() {
                               borderColor={theme.colors.color1}
                               placeholder="Digite sua senha"
                               _placeholder={{
-                                color: theme.colors.onColor4,  
+                                color: theme.colors.color5,  
                                 opacity: 1                      
                               }}
                               focusVisibleRing="outside"                
